@@ -11,7 +11,7 @@ public class TestMocks {
         when(sin.sin(PI / 6)).thenReturn(0.5);
         when(sin.sin(-PI / 6)).thenReturn(-0.5);
         when(sin.sin(PI / 3)).thenReturn(0.8660254);
-        when(sin.sin(-PI / 3)).thenReturn(0.8660254);
+        when(sin.sin(-PI / 3)).thenReturn(-0.8660254);
         when(sin.sin(-PI / 2)).thenReturn(-1.0);
         when(sin.sin(PI / 2)).thenReturn(1.0);
         when(sin.sin(PI)).thenReturn(0.0);
@@ -62,8 +62,8 @@ public class TestMocks {
         when(cos.cos(-3)).thenReturn(-0.9899924966);
         when(cos.cos(-2)).thenReturn(-0.41614683654);
 
-        when(cos.cos(-1)).thenReturn(-0.54030230586);
-        when(cos.cos(-0.22)).thenReturn(-0.97589744933);
+        when(cos.cos(-1)).thenReturn(0.54030230586);
+        when(cos.cos(-0.22)).thenReturn(0.97589744933);
 
         when(cos.cos(0.3)).thenReturn(0.95533648912);
         when(cos.cos(1.3)).thenReturn(0.26749882862);
@@ -75,8 +75,8 @@ public class TestMocks {
         when(cos.cos(-3 + 2 * PI)).thenReturn(-0.9899924966);
         when(cos.cos(-2 + 2 * PI)).thenReturn(-0.41614683654);
 
-        when(cos.cos(-1 + 2 * PI)).thenReturn(-0.54030230586);
-        when(cos.cos(-0.22 + 2 * PI)).thenReturn(-0.97589744933);
+        when(cos.cos(-1 + 2 * PI)).thenReturn(0.54030230586);
+        when(cos.cos(-0.22 + 2 * PI)).thenReturn(0.97589744933);
 
         when(cos.cos(0.3 + 2 * PI)).thenReturn(0.95533648912);
         when(cos.cos(1.3 + 2 * PI)).thenReturn(0.26749882862);
@@ -98,8 +98,8 @@ public class TestMocks {
         when(ctg.ctg(-PI / 3)).thenReturn(-0.5773502692);
         when(ctg.ctg(-PI / 2)).thenReturn(0.0);
         when(ctg.ctg(PI / 2)).thenReturn(0.0);
-        when(ctg.ctg(PI)).thenReturn(Double.NEGATIVE_INFINITY);
-        when(ctg.ctg(-PI)).thenReturn(Double.NEGATIVE_INFINITY);
+        when(ctg.ctg(PI)).thenReturn(Double.POSITIVE_INFINITY);
+        when(ctg.ctg(-PI)).thenReturn(Double.POSITIVE_INFINITY);
 
         when(ctg.ctg(-3)).thenReturn(7.0152525514);
         when(ctg.ctg(-2)).thenReturn(0.4576575544);
@@ -137,7 +137,7 @@ public class TestMocks {
         when(tang.tang(-PI / 6)).thenReturn(-0.5773502692);
         when(tang.tang(PI / 3)).thenReturn(1.7320508076);
         when(tang.tang(-PI / 3)).thenReturn(-1.7320508076);
-        when(tang.tang(-PI / 2)).thenReturn(Double.NEGATIVE_INFINITY);
+        when(tang.tang(-PI / 2)).thenReturn(Double.POSITIVE_INFINITY);
         when(tang.tang(PI / 2)).thenReturn(Double.POSITIVE_INFINITY);
         when(tang.tang(PI)).thenReturn(0.0);
         when(tang.tang(-PI)).thenReturn(0.0);
@@ -178,7 +178,7 @@ public class TestMocks {
         when(sec.sec(PI / 6)).thenReturn(1.15470053838);
         when(sec.sec(-PI / 6)).thenReturn(1.15470053838);
         when(sec.sec(PI / 3)).thenReturn(2.0);
-        when(sec.sec(-PI / 3)).thenReturn(-2.0);
+        when(sec.sec(-PI / 3)).thenReturn(2.0);
         when(sec.sec(-PI / 2)).thenReturn(Double.POSITIVE_INFINITY);
         when(sec.sec(PI / 2)).thenReturn(Double.POSITIVE_INFINITY);
         when(sec.sec(PI)).thenReturn(-1.0);
@@ -239,6 +239,14 @@ public class TestMocks {
         when(log.log(5, 77.666)).thenReturn(2.704309093);
         when(log.log(5, 1777.666)).thenReturn(4.6494844499);
 
+        when(log.log(10, 0.123)).thenReturn(-0.91009488856);
+        when(log.log(10, 0.211)).thenReturn(-0.6757175447);
+        when(log.log(10, 1.213)).thenReturn(0.083860800867);
+        when(log.log(10, 2.456)).thenReturn(0.39022836247);
+        when(log.log(10, 7.311)).thenReturn(0.8639767839);
+        when(log.log(10, 77.666)).thenReturn(1.8902309384);
+        when(log.log(10, 1777.666)).thenReturn(3.2498501661);
+
         return log;
     }
 
@@ -253,6 +261,10 @@ public class TestMocks {
         when(log.ln(77.666)).thenReturn(4.3524175812);
         when(log.ln(1777.666)).thenReturn(7.4830565469);
 
+        when(log.ln(2)).thenReturn(0.69314718056);
+        when(log.ln(3)).thenReturn(1.09861228867);
+        when(log.ln(5)).thenReturn(1.60943791243);
+        when(log.ln(10)).thenReturn(2.30258509299);
         return log;
     }
 }

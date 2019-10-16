@@ -6,6 +6,13 @@ public class Sin {
     }
 
     public double sin(double x) {
-        return Math.sqrt(1 - Math.pow(cos.cos(x), 2));
+        double r = Math.sqrt(1 - Math.pow(cos.cos(x), 2));
+        x %= 2 * Math.PI;
+        if (x >=0 && x <= Math.PI)
+            return r;
+        if (x >= -2*Math.PI && x <= -Math.PI)
+            return r;
+        else
+            return -r;
     }
 }

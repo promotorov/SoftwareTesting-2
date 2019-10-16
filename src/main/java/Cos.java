@@ -1,5 +1,5 @@
 public class Cos {
-    public double accuracy = 0.0001;
+    public double accuracy = 0.01;
 
     private int factorial(int val) {
         if(val <= 1)

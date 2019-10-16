@@ -6,6 +6,13 @@ public class Ctg {
     }
 
     public double ctg(double x) {
-        return Math.sqrt(1 / Math.pow(sin.sin(x), 2) - 1);
+        double r = Math.sqrt(1 / Math.pow(sin.sin(x), 2) - 1);
+        x %= 2 * Math.PI;
+        if ((x >=0 && x <= Math.PI/2) || (x >=Math.PI && x <= Math.PI/2*3))
+            return r;
+        if ((x >=-Math.PI && x <= -Math.PI/2) || (x >=-2*Math.PI && x <= -Math.PI/2*3))
+            return r;
+        else
+            return -r;
     }
 }
