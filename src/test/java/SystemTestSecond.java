@@ -19,8 +19,14 @@ public class SystemTestSecond {
                         TestMocks.createCtg(),
                         TestMocks.createTang(),
                         TestMocks.createCosinus(),
-                        TestMocks.createLog(),
-                        TestMocks.createLn())
+                        new Log(TestMocks.createLn()),
+                        TestMocks.createLn()),
+                new System(TestMocks.createSec(),
+                        TestMocks.createCtg(),
+                        TestMocks.createTang(),
+                        TestMocks.createCosinus(),
+                        new Log(new Ln()),
+                        new Ln())
         };
         return Arrays.asList(data);
     }
