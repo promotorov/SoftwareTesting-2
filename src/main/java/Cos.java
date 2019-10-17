@@ -1,4 +1,4 @@
-public class Cos {
+public class Cos extends AbstractModule {
     public double accuracy = 0.01;
 
     private int factorial(int val) {
@@ -25,5 +25,10 @@ public class Cos {
             else
                 prevResult = result;
         }
+    }
+
+    @Override
+    public double calcModule(double x) {
+        return cos(x);
     }
 }

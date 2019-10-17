@@ -1,4 +1,4 @@
-public class Sin {
+public class Sin extends AbstractModule {
     private Cos cos;
 
     public Sin(Cos cos) {
@@ -14,5 +14,10 @@ public class Sin {
             return r;
         else
             return -r;
+    }
+
+    @Override
+    public double calcModule(double x) {
+        return sin(x);
     }
 }
