@@ -1,4 +1,4 @@
-public class Sec {
+public class Sec extends AbstractModule {
     private Cos cos;
 
     public Sec(Cos cos) {
@@ -7,5 +7,10 @@ public class Sec {
 
     public double sec(double x) {
         return 1 / cos.cos(x);
+    }
+
+    @Override
+    public double calcModule(double x) {
+        return sec(x);
     }
 }

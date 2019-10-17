@@ -1,4 +1,4 @@
-public class Ctg {
+public class Ctg extends AbstractModule {
     private Sin sin;
 
     public Ctg(Sin sin) {
@@ -14,5 +14,10 @@ public class Ctg {
             return r;
         else
             return -r;
+    }
+
+    @Override
+    public double calcModule(double x) {
+        return ctg(x);
     }
 }

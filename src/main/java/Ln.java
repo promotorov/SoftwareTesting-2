@@ -1,4 +1,4 @@
-public class Ln {
+public class Ln extends AbstractModule {
     public double accuracy = 0.000000001;
 
     public double ln(double x) throws Exception {
@@ -15,5 +15,17 @@ public class Ln {
             else
                 prevResult = result;
         }
+    }
+
+    @Override
+    public double calcModule(double x) {
+        double result;
+        try {
+            result = ln(x);
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = -999;
+        }
+        return result;
     }
 }

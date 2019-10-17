@@ -1,4 +1,4 @@
-public class System {
+public class System extends AbstractModule {
     private Sec sec;
     private Ctg ctg;
     private Tang tang;
@@ -23,6 +23,16 @@ public class System {
             double left = Math.pow(Math.pow(log.log(2, x) / log.log(3, x), 3) - (ln.ln(x) * log.log(5, x)), 2);
             double right = (log.log(5, x) * log.log(2, x)) - ((log.log(10, x) - log.log(10, x)) / log.log(5, x));
             return left * right;
+        }
+    }
+
+    @Override
+    public double calcModule(double x) {
+        try {
+            return calc(x);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -999;
         }
     }
 }
