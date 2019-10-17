@@ -16,7 +16,7 @@ public class System extends AbstractModule {
         this.ln = ln;
     }
 
-    public double calc(double x) throws Exception {
+    public double calc(double x) {
         if (x <= 0)
             return Math.pow( (((sec.sec(x) + sec.sec(x) - ctg.ctg(x)) - tang.tang(x))) - (tang.tang(x) * cos.cos(x)), 2);
         else {

@@ -1,4 +1,3 @@
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -9,7 +8,7 @@ import java.util.Collection;
 
 @RunWith(Parameterized.class)
 public class CosinusTest {
-    private static final double DELTA = 0.001;
+    private static final double DELTA = 0.000001;
     Cos cos = new Cos();
 
     @Parameters

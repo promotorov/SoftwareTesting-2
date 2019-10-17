@@ -5,7 +5,7 @@ public class Log {
         this.ln = ln;
     }
 
-    public double log(int b, double x) throws Exception {
+    public double log(int b, double x) {
         return ln.ln(x) / ln.ln(b);
     }
 }

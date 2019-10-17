@@ -212,7 +212,7 @@ public class TestMocks {
         return sec;
     }
 
-    public static Log createLog() throws Exception{
+    public static Log createLog() {
         Log log = mock(Log.class);
 
         when(log.log(2, 0.123)).thenReturn(-3.0232697793);
@@ -250,7 +250,7 @@ public class TestMocks {
         return log;
     }
 
-    public static Ln createLn() throws Exception {
+    public static Ln createLn() {
         Ln log = mock(Ln.class);
 
         when(log.ln(0.123)).thenReturn(-2.0955709236);

@@ -9,19 +9,12 @@ import java.util.Collection;
 
 @RunWith(Parameterized.class)
 public class SinusTest {
-    private static final double DELTA = 0.001;
-    Sin sin = new Sin(TestMocks.createCosinus());
+    private static final double DELTA = 0.0001;
+    Sin sin = new Sin(new Cos());
 
     @Parameters
     public static Collection data() {
         Double[][] data = new Double[][] {
-                {0.0, 0.0},
-                {Math.PI/6, 0.5},
-                {-Math.PI/6, -0.5},
-                {Math.PI/3, 0.8660254},
-                {-Math.PI/3, -0.8660254},
-                {Math.PI/2, 1.0},
-                {-Math.PI/2, -1.0},
                 {Math.PI, 0.0},
                 {-Math.PI, 0.0},
 
