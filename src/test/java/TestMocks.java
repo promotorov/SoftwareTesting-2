@@ -17,15 +17,13 @@ public class TestMocks {
         when(sin.sin(PI)).thenReturn(0.0);
         when(sin.sin(-PI)).thenReturn(0.0);
 
+
         when(sin.sin(-3)).thenReturn(-0.14112000806);
         when(sin.sin(-2)).thenReturn(-0.90929742682);
-
         when(sin.sin(-1)).thenReturn(-0.8414709848);
         when(sin.sin(-0.22)).thenReturn(-0.21822962308);
-
         when(sin.sin(0.3)).thenReturn(0.29552020666);
         when(sin.sin(1.3)).thenReturn(0.96355818541);
-
         when(sin.sin(2.23)).thenReturn(0.79048022234);
         when(sin.sin(3.1)).thenReturn(0.04158066243);
 
@@ -255,6 +253,13 @@ public class TestMocks {
 
         when(log.ln(0.123)).thenReturn(-2.0955709236);
         when(log.ln(0.211)).thenReturn(-1.5558971455);
+
+        when(log.ln(0.313)).thenReturn(-1.16155209);
+        when(log.ln(1.1)).thenReturn(0.0953101798);
+        when(log.ln(4.3)).thenReturn(1.45861502);
+        when(log.ln(5.0)).thenReturn(1.60943791);
+        when(log.ln(14.0)).thenReturn(2.63905733);
+
         when(log.ln(1.213)).thenReturn(0.19309662996);
         when(log.ln(2.456)).thenReturn(0.89853401028);
         when(log.ln(7.311)).thenReturn(1.9893800633);

@@ -16,77 +16,49 @@ public class SystemTestFirst {
     public static Collection data() {
         System[] data = new System[] {
                 new System(TestMocks.createSec(),
-                    TestMocks.createCtg(),
-                    TestMocks.createTang(),
-                    TestMocks.createCosinus(),
-                    TestMocks.createLog(),
-                    TestMocks.createLn()),
-                new System(TestMocks.createSec(),
                         TestMocks.createCtg(),
                         TestMocks.createTang(),
-                        new Cos(),
+                        TestMocks.createCosinus(),
+                        TestMocks.createLog(),
+                        TestMocks.createLn()),
+                new System(TestMocks.createSec(),
+                        TestMocks.createCtg(),
+                        new Tang(TestMocks.createCtg()),
+                        TestMocks.createCosinus(),
                         TestMocks.createLog(),
                         TestMocks.createLn()),
                 new System(new Sec(TestMocks.createCosinus()),
                         TestMocks.createCtg(),
                         TestMocks.createTang(),
-                        new Cos(),
+                        TestMocks.createCosinus(),
                         TestMocks.createLog(),
                         TestMocks.createLn()),
-                new System(new Sec(new Cos()),
+                new System(TestMocks.createSec(),
                         TestMocks.createCtg(),
                         TestMocks.createTang(),
-                        new Cos(),
-                        TestMocks.createLog(),
+                        TestMocks.createCosinus(),
+                        new Log(TestMocks.createLn()),
                         TestMocks.createLn()),
-                new System(TestMocks.createSec(),
+                //
+                new System(new Sec(TestMocks.createCosinus()),
                         new Ctg(TestMocks.createSinus()),
-                        TestMocks.createTang(),
-                        new Cos(),
-                        TestMocks.createLog(),
+                        new Tang(new Ctg(TestMocks.createSinus())),
+                        TestMocks.createCosinus(),
+                        new Log(TestMocks.createLn()),
                         TestMocks.createLn()),
-                new System(TestMocks.createSec(),
-                        new Ctg(new Sin(TestMocks.createCosinus())),
-                        TestMocks.createTang(),
-                        new Cos(),
-                        TestMocks.createLog(),
-                        TestMocks.createLn()),
-                new System(TestMocks.createSec(),
-                        new Ctg(new Sin(new Cos())),
-                        TestMocks.createTang(),
-                        new Cos(),
-                        TestMocks.createLog(),
-                        TestMocks.createLn()),
-                new System(TestMocks.createSec(),
-                        new Ctg(new Sin(new Cos())),
-                        new Tang(TestMocks.createCtg()),
-                        new Cos(),
-                        TestMocks.createLog(),
-                        TestMocks.createLn()),
-                new System(TestMocks.createSec(),
+                new System(new Sec(TestMocks.createCosinus()),
+                        TestMocks.createCtg(),
+                        new Tang(new Ctg(TestMocks.createSinus())),
+                        TestMocks.createCosinus(),
+                        new Log(new Ln()),
+                        new Ln()),
+
+                new System(new Sec(new Cos()),
                         new Ctg(new Sin(new Cos())),
                         new Tang(new Ctg(TestMocks.createSinus())),
                         new Cos(),
-                        TestMocks.createLog(),
-                        TestMocks.createLn()),
-                new System(TestMocks.createSec(),
-                        new Ctg(new Sin(new Cos())),
-                        new Tang(new Ctg(new Sin(TestMocks.createCosinus()))),
-                        new Cos(),
-                        TestMocks.createLog(),
-                        TestMocks.createLn()),
-                new System(TestMocks.createSec(),
-                        new Ctg(new Sin(new Cos())),
-                        new Tang(new Ctg(new Sin(new Cos()))),
-                        new Cos(),
-                        TestMocks.createLog(),
-                        TestMocks.createLn()),
-                new System(new Sec(new Cos()),
-                        new Ctg(new Sin(new Cos())),
-                        new Tang(new Ctg(new Sin(new Cos()))),
-                        new Cos(),
-                        TestMocks.createLog(),
-                        TestMocks.createLn())
+                        new Log(new Ln()),
+                        new Ln())
         };
         return Arrays.asList(data);
     }
@@ -135,6 +107,41 @@ public class SystemTestFirst {
     @Test
     public void testM022() {
         assertEquals(48.4852, system.calc(-0.22), DELTA);
+    }
+
+    @Test
+    public void test0123() {
+        assertEquals(6.18079, system.calc(0.123), DELTA);
+    }
+
+    @Test
+    public void test0211() {
+        assertEquals(13.3191, system.calc(0.211), DELTA);
+    }
+
+    @Test
+    public void test1213() {
+        assertEquals(0.523715, system.calc(1.213), DELTA);
+    }
+
+    @Test
+    public void test2456() {
+        assertEquals(8.76427, system.calc(2.456), DELTA);
+    }
+
+    @Test
+    public void test7311() {
+        assertEquals(8.22423, system.calc(7.311), DELTA);
+    }
+
+    @Test
+    public void test77666() {
+        assertEquals(1030.13, system.calc(77.666), DELTA);
+    }
+
+    @Test
+    public void test1777666() {
+        assertEquals(47650.03, system.calc(1777.666), DELTA);
     }
 
     /*@Test
